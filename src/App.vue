@@ -1,27 +1,64 @@
 <template>
   <div id="app">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <Skills v-bind:skills="skills"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from './components/layout/Header.vue'
+import Skills from './components/Skills.vue'
+import StarRating from 'vue-star-rating'
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Header,
+    Skills,
+    StarRating
+  },
+  data() { 
+    return {
+      skills: [
+        {
+          id: 1,
+          title: "java",
+          progress: 4/5
+        },
+        {
+          id: 2,
+          title: "C/C++",
+          progress: 3/5
+        },
+        {
+          id: 3,
+          title: "Web development",
+          progress: 3/5
+        },
+        {
+          id: 4,
+          title: "VHDL",
+          progress: 2/5
+        },
+        {
+          id: 5,
+          title: "SQL",
+          progress: 3/5
+        }
+      ]
+    }
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  * {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px
+  }
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.4;
+  }
 </style>
