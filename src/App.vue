@@ -1,49 +1,50 @@
 <template>
   <div id="app">
     <Header />
-    <Skills v-bind:skills="skills"/>
+    <div class="SkillSet">
+      <header class="Skillset">Skillset:</header>
+      <Skills v-bind:skills="skills"/>
+    </div>
   </div>
 </template>
 
 <script>
 import Header from './components/layout/Header.vue'
 import Skills from './components/Skills.vue'
-import StarRating from 'vue-star-rating'
 
 export default {
   name: 'app',
   components: {
     Header,
-    Skills,
-    StarRating
+    Skills
   },
   data() { 
     return {
       skills: [
         {
           id: 1,
-          title: "java",
-          progress: 4/5
+          title: "Java",
+          progress: 4
         },
         {
           id: 2,
           title: "C/C++",
-          progress: 3/5
+          progress: 3
         },
         {
           id: 3,
           title: "Web development",
-          progress: 3/5
+          progress: 3
         },
         {
           id: 4,
           title: "VHDL",
-          progress: 2/5
+          progress: 2
         },
         {
           id: 5,
           title: "SQL",
-          progress: 3/5
+          progress: 3
         }
       ]
     }
@@ -60,5 +61,9 @@ export default {
   body {
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.4;
+  }
+  .SkillSet {
+    position: absolute;
+    right: 10px;
   }
 </style>
